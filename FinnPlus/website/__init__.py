@@ -11,10 +11,12 @@ def create_app():
     app = Flask(__name__)
 
     # app.config variables should be wrapped in environment variables for security reasons.
+
     app.config['SECRET_KEY'] = 'SECRET KEY HERE'
 
+
     # MongoDB connection string to Atlas cluster. Username and password is admin and name of DB is FinnPlus
-    app.config['MONGO_URI'] = f'MONGODB URI STRING HERE'
+    app.config['MONGO_URI'] = f'mongodb+srv://admin:admin@cluster0.rhshz.mongodb.net/FinnPlus?retryWrites=true&w=majority'
 
     # Upload folder for product images
     app.config['UPLOAD_FOLDER'] = '/website/static/uploads'
