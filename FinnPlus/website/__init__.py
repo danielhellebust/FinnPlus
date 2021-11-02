@@ -16,7 +16,7 @@ def create_app():
 
 
     # MongoDB connection string to Atlas cluster. Username and password is admin and name of DB is FinnPlus
-    app.config['MONGO_URI'] = f'mongodb+srv://admin:admin@cluster0.rhshz.mongodb.net/FinnPlus?retryWrites=true&w=majority'
+    app.config['MONGO_URI'] = f'MONGODB URI STRING HERE'
 
     # Upload folder for product images
     app.config['UPLOAD_FOLDER'] = '/website/static/uploads'
