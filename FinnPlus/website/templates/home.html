@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+
+
+    <div class="container">
+        <form method="post">
+            <div class="row">
+                <!--Column Left-->
+                <div class="col">
+
+                    <h1>Filter</h1><br><br>
+                    <div><h4>Brand</h4>
+                        <! –– Filter Checkboxes ––>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Park Tool" name="checkBrand"
+                                   id="brandParkTool">
+                            <label class="form-check-label" for="brandParkTool">
+                                Park Tool <span class="badge badge-pill badge-light">{{ park_tool_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="GT" name="checkBrand" id="brandGT">
+                            <label class="form-check-label" for="brandGT">
+                                GT <span class="badge badge-pill badge-light">{{ gt_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Specialized" name="checkBrand"
+                                   id="brandSpecialized">
+                            <label class="form-check-label" for="brandSpecialized">
+                                Specialized <span class="badge badge-pill badge-light">{{ specialized_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Trek" name="checkBrand"
+                                   id="brandTrek">
+                            <label class="form-check-label" for="brandTrek">
+                                Trek <span class="badge badge-pill badge-light">{{ trek_count }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div><h4>Category</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Bike" name=checkCategory
+                                   id="categoryBike">
+                            <label class="form-check-label" for="categoryBike">
+                                Bike <span class="badge badge-pill badge-light">{{ bike_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Clothing" name=checkCategory
+                                   id="categoryClothing">
+                            <label class="form-check-label" for="categoryClothing">
+                                Clothing <span class="badge badge-pill badge-light">{{ clothing_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Tools" name=checkCategory
+                                   id="categoryTools">
+                            <label class="form-check-label" for="categoryTools">
+                                Tools <span class="badge badge-pill badge-light">{{ tools_count }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div><h4>Color</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Black" name=checkColor
+                                   id="colorBlack">
+                            <label class="form-check-label" for="colorBlack">
+                                Black <span class="badge badge-pill badge-light">{{ black_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Blue" name=checkColor id="colorBlue">
+                            <label class="form-check-label" for="colorBlue">
+                                Blue <span class="badge badge-pill badge-light">{{ blue_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Grey" name=checkColor id="colorGrey">
+                            <label class="form-check-label" for="colorGrey">
+                                Grey <span class="badge badge-pill badge-light">{{ grey_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Yellow" name=checkColor
+                                   id="colorYellow">
+                            <label class="form-check-label" for="colorYellow">
+                                Yellow <span class="badge badge-pill badge-light">{{ yellow_count }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="White" name=checkColor
+                                   id="colorWhite">
+                            <label class="form-check-label" for="colorWhite">
+                                White <span class="badge badge-pill badge-light">{{ white_count }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <div><h4>Price Range</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value='0,1000' name=checkPrice
+                                   id="price0-1000">
+                            <label class="form-check-label" for="price0-1000">
+                                0-1000 <span class="badge badge-pill badge-light">{{ count0to1000 }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value='1000,2000' name=checkPrice
+                                   id="price1000-2000">
+                            <label class="form-check-label" for="price1000-2000">
+                                1000-2000 <span class="badge badge-pill badge-light">{{ count1000to2000 }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value='2000,5000' name=checkPrice
+                                   id="price2000-5000">
+                            <label class="form-check-label" for="price2000-5000">
+                                2000-5000 <span class="badge badge-pill badge-light">{{ count2000to5000 }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value='5000,10000' name=checkPrice
+                                   id="price5000-1000">
+                            <label class="form-check-label" for="price5000-1000">
+                                5000-10000 <span class="badge badge-pill badge-light">{{ count5000to10000 }}</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="10000,>" name=checkPrice
+                                   id="price>10000">
+                            <label class="form-check-label" for="price>10000">
+                                >10000 <span class="badge badge-pill badge-light">{{ countover10000 }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Update Search</button>
+
+                </div>
+
+                <div class="col-10">
+                    <!--Column Right-->
+                    <br>
+                    <div class="text-center">
+                        <form>
+                            <div class="row">
+                                <div class="col-10">
+                                    <! –– Free-text search field ––>
+                                    <div class="form-group text-center">
+
+                                        <input
+                                                type="text"
+                                                class="form-control text-center"
+                                                id="productSearch"
+                                                name="productSearch"
+                                                placeholder="Search for a product"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <!--Search Result-->
+                    <! –– Loop over products in the product collection search result ––>
+                    {% for product in products %}
+                        <br>
+                        <div class="col-lg-4 ">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="/static/uploads/{{ product.imageFile }}"
+                                     alt="Card image cap">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-center">{{ product.productName }}</h5>
+                                    <p class="card-text text-left">{{ product.productDescription }}</p>
+                                    <p class="card-text text-left">SKU: {{ product.sku }}</p>
+                                    <p class="card-text text-left">Brand: {{ product.brand }}</p>
+                                    <h6 class="card-text text-left">Tags:</h6>
+                                    {% for tags in product.tags %}
+                                        <h6 class="text-left">*{{ tags }}*</h6>
+                                    {% endfor %}
+                                    <br><h4>{{ product.price }} NOK</h4>
+
+                                </div>
+                                <div class="d-flex flex-row justify-content-center mt-auto">
+                                    {% if product.status == 'Sold' %}
+                                        <button class="btn btn-danger" type="submit" name="sold"
+                                                value='#'>Sold !
+                                        </button>
+                                    {% else %}
+                                        <button class="btn btn-primary" type="submit" name="addToCart"
+                                                value={{ product._id }}>Add to Cart
+                                        </button>
+                                    {% endif %}
+
+                                    <br>
+                                </div>
+                                <br>
+                            </div>
+                            <br>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+{% endblock %}

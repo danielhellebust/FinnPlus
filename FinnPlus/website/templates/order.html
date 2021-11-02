@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title %}Order{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-12 text-center ">
+            <h1>Your Orders</h1><br>
+            <div class="col 12 text-right">
+
+                <form name="sortByForm" id="sortByForm" method="POST"/>
+                <div class="input-append">
+                    <input class="span2" id="search_type" name="search_type" type="hidden">
+                    <div class="btn-group">
+                        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            Sort By
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li onclick="$('#search_type').val('orderHighLow'); $('#sortByForm').submit()">Total
+                                High-Low
+                            </li>
+                            <li onclick="$('#search_type').val('orderLowHigh'); $('#sortByForm').submit()">Total
+                                Low-High
+                            </li>
+                            <li onclick="$('#search_type').val('dateNewOld'); $('#sortByForm').submit()">Date
+                                Newest-Oldest
+                            </li>
+                            <li onclick="$('#search_type').val('dateOldNew'); $('#sortByForm').submit()">Date
+                                Oldest-Newest
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="row">
+                <! –– Loop over orders in the order collection ––>
+                {% for product in order %}
+                    <div class="col-12 text-left ">
+                        <h1>Order</h1><br>
+                        <h6><b>Order date:</b> {{ product.OrderDate }} </h6>
+                        <h6><b>Customer Name:</b> {{ product.CustomerName }} </h6>
+                        <h6><b>Customer Address:</b> {{ product.CustomerAddress }} </h6>
+                        <h6><b>Status:</b> {{ product.Status }}</h6>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">SKU</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Description</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+                        <! –– Loop over products in the ProductDetails array in the order collection ––>
+                        {% for item in product.ProductDetails %}</td>
+                            <tbody>
+                            <tr>
+                            <td> {{ item.ProductSKU }}</td>
+                            <td> {{ item.ProductName }}</td>
+                            <td> {{ item.ProductDesc }}</td>
+                            <td> {{ item.ProductPrice }}</td>{% endfor %}
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="col-12 text-right ">
+                        <h3> Order Total: {{ product.OrderTotal }} </h3>
+                    </div>{% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

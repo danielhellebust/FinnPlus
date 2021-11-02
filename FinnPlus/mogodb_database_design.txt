@@ -1,0 +1,224 @@
+use finnplus;
+
+db.createCollection("products", {
+    "storageEngine": {
+        "wiredTiger": {}
+    },
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Products",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId",
+                    "title": "_id"
+                },
+                "productName": {
+                    "bsonType": "string"
+                },
+                "productDescription": {
+                    "bsonType": "string"
+                },
+                "sku": {
+                    "bsonType": "string"
+                },
+                "productCategory": {
+                    "bsonType": "string"
+                },
+                "brand": {
+                    "bsonType": "string"
+                },
+                "price": {
+                    "bsonType": "number"
+                },
+                "tags": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "string"
+                    }
+                },
+                "imageFile": {
+                    "bsonType": "string"
+                },
+                "status": {
+                    "bsonType": "string"
+                },
+                "color": {
+                    "bsonType": "string"
+                }
+            }
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("customer", {
+    "storageEngine": {
+        "wiredTiger": {}
+    },
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Customer",
+            "properties": {
+                "_id": {
+                    "bsonType": "string"
+                },
+                "CustomerName": {
+                    "bsonType": "string"
+                },
+                "Address": {
+                    "bsonType": "string"
+                },
+                "ZipCode": {
+                    "bsonType": "string"
+                },
+                "City": {
+                    "bsonType": "string"
+                },
+                "Country": {
+                    "bsonType": "string"
+                },
+                "Password": {
+                    "bsonType": "string"
+                }
+            }
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("cart", {
+    "storageEngine": {
+        "wiredTiger": {}
+    },
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Cart",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "ProductName": {
+                    "bsonType": "string"
+                },
+                "ProductDesc": {
+                    "bsonType": "string"
+                },
+                "ProductSKU": {
+                    "bsonType": "string"
+                },
+                "ProductBrand": {
+                    "bsonType": "string"
+                },
+                "ProductId": {
+                    "bsonType": "objectId"
+                },
+                "ProductPrice": {
+                    "bsonType": "number"
+                }
+            }
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("checkout", {
+    "storageEngine": {
+        "wiredTiger": {}
+    },
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Checkout",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "ProductName": {
+                    "bsonType": "string"
+                },
+                "ProductDesc": {
+                    "bsonType": "string"
+                },
+                "ProductSKU": {
+                    "bsonType": "string"
+                },
+                "ProductBrand": {
+                    "bsonType": "string"
+                },
+                "ProductId": {
+                    "bsonType": "objectId"
+                },
+                "ProductPrice": {
+                    "bsonType": "number"
+                }
+            }
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});
+
+
+
+
+db.createCollection("order", {
+    "storageEngine": {
+        "wiredTiger": {}
+    },
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "Order",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "OrderDate": {
+                    "bsonType": "date"
+                },
+                "CustomerName": {
+                    "bsonType": "string"
+                },
+                "CustomerAddress": {
+                    "bsonType": "string"
+                },
+                "OrderTotal": {
+                    "bsonType": "number"
+                },
+                "Status": {
+                    "bsonType": "string"
+                },
+                "ProductDetails": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "object"
+                    }
+                }
+            }
+        }
+    },
+    "validationLevel": "off",
+    "validationAction": "warn"
+});

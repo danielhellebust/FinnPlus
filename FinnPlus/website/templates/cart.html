@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Shopping Cart{% endblock %}
+{% block content %}
+
+    <! –– Shopping Cart Table ––>
+    <h1>Shopping Cart</h1>
+    <table class="table">
+        <form method="post">
+            <thead>
+            <tr>
+                <th scope="col">SKU</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Remove</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <! –– Loop over all products in the cart collection from the database ––>
+            {% for product in cart %}
+                <tr>
+                    <td> {{ product.ProductSKU }}</td>
+                    <td>{{ product.ProductName }}</td>
+                    <td>{{ product.ProductDesc }}</td>
+                    <td>{{ product.ProductPrice }}</td>
+                    <td>
+
+                        <button class="btn btn-danger" type="submit" name="deleteFromCart" value={{ product._id }}>
+                            Delete
+                        </button>
+                    </td>
+                </tr>{% endfor %}
+            <button class="btn btn-danger" type="submit" name="emptyCart" value='emptyCart'>Empty Cart</button>
+            <a> </a>
+            <button class="btn btn-success" type="submit" name="checkOut" value='checkOut'>Checkout</button>
+            </tbody>
+        </form>
+
+
+    </table>
+{% endblock %}

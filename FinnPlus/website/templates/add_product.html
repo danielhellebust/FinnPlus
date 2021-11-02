@@ -1,0 +1,102 @@
+{% extends "base.html" %} {% block title %}Add product{% endblock %} {% block
+content %}
+
+    <br>
+    <! –– add product form ––>
+    <form method="POST" enctype=multipart/form-data>
+        <h3 align="center">Add product</h3>
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="productName"
+                    name="productName"
+                    placeholder="Enter Product Name"
+            />
+        </div>
+        <div class="form-group">
+            <label for="productDescription">Product Description</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="productDescription"
+                    name="productDescription"
+                    placeholder="Enter Product Description"
+            />
+        </div>
+        <div class="form-group">
+            <label for="sku">Sku</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="sku"
+                    name="sku"
+                    placeholder="Enter SKU"
+            />
+        </div>
+        <div class="form-group">
+            <label for="productCategory">Product Category</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="productCategory"
+                    name="productCategory"
+                    placeholder="Enter Product Category"
+            />
+        </div>
+        <div class="form-group">
+            <label for="Brand">Brand</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="brand"
+                    name="brand"
+                    placeholder="Enter Product Brand"
+            />
+        </div>
+        <div class="form-group">
+            <label for="Color">Color</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="productColor"
+                    name="productColor"
+                    placeholder="Enter color"
+            />
+        </div>
+        <div class="form-group">
+            <label for="Price">Price</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    name="price"
+                    placeholder="Enter price"
+            />
+        </div>
+        <div class="form-group">
+            <label for="Tags">Tags</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="tags"
+                    name="tags"
+                    placeholder="Enter tags, separate by comma(,)"
+            />
+        </div>
+        <div class="form-group">
+            <label for="file">Image file</label>
+            <input
+                    type="file"
+                    class="form-control"
+                    id="file"
+                    name="file"
+                    placeholder="Upload picture"
+            />
+        </div>
+
+        <br/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
