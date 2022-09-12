@@ -1,6 +1,6 @@
 # FinnPlus
 
-FinnPlus is a basic imaginary webshop to practice search functionality and integration to MongoDB NoSQL database. 
+FinnPlus is a basic imaginary webshop created as a FLASK app to practice search functionality and integration to MongoDB NoSQL database. 
 
 Functionality includes:
 * Search for a product by text
